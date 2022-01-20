@@ -1,0 +1,19 @@
+{
+  "name": "kataliz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx http-server -p 3000 ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hesamsrk/kataliz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hesamsrk/kataliz/issues"
+  },
+  "homepage": "https://github.com/Hesamsrk/kataliz#readme"
+}

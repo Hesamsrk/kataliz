@@ -101,12 +101,13 @@
                                     on the Kataliz blockchain infrastructure & uses <a href="#about-part">$KAT</a> as
                                     it’s exclusive on-platform
                                     currency.</p>
-                                <form class="w-100 d-flex justify-content-start mb-2" style="height: 52px"
-                                      onsubmit="SubmitAddress()">
+                                <form class="w-100 d-flex justify-content-start mb-2" style="height: 52px">
                                     <input type="text" class="bg-transparent form-control h-100 text-white-50"
                                            id="ETH-address"
                                            placeholder="Enter your ETH(ERC-20) address">
-                                    <button type="submit" class="btn big-width btn-color mx-1 h-100">Claim</button>
+                                    <button type="submit" class="btn big-width btn-color mx-1 h-100"
+                                            onclick="SubmitAddress()">Claim
+                                    </button>
                                 </form>
 
 
@@ -1003,9 +1004,22 @@
         });
     }).scroll();
 
+
     const SubmitAddress = () => {
-        alert("Submitted!")
-        $(`#ETH-address`).val('');
+        let input = document.getElementById("ETH-address")
+        let data = {
+            date: new Date(),
+            address: input.value
+        }
+        fetch("https://kataliz-default-rtdb.firebaseio.com/address.json", {
+            method: 'POST',
+            body: JSON.stringify(data)
+        }).then(() => {
+            alert("Submitted!")
+            input.value = ""
+        }).catch(() => {
+            alert("Connection error!")
+        })
     }
 </script>
 </body>
