@@ -101,8 +101,15 @@
                                     on the Kataliz blockchain infrastructure & uses <a href="#about-part">$KAT</a> as
                                     it’s exclusive on-platform
                                     currency.</p>
-                                <a href="/files/BusinessPlan.pdf" class="btn big-width btn-color" target="_blank"
-                                   rel="noopener noreferrer">Read Business Plan</a>
+                                <form class="w-100 d-flex justify-content-start mb-2" style="height: 52px"
+                                      onsubmit="SubmitAddress()">
+                                    <input type="text" class="bg-transparent form-control h-100 text-white-50"
+                                           id="ETH-address"
+                                           placeholder="Enter your ETH(ERC-20) address">
+                                    <button type="submit" class="btn big-width btn-color mx-1 h-100">Claim</button>
+                                </form>
+
+
                             </div>
                         </div>
                         <div class="col-lg-6 p-0">
@@ -995,6 +1002,11 @@
             }
         });
     }).scroll();
+
+    const SubmitAddress = () => {
+        alert("Submitted!")
+        $(`#ETH-address`).val('');
+    }
 </script>
 </body>
 
